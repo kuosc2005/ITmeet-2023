@@ -1,70 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>IT MEET 2023</title>
-</head>
+  </head>
 
-<body>
-    <div class="background"></div>
-
-    
-    <div class="rectangle">
-        <div class="image-container">
-            <img src="img/kucc.png" alt="kucc logo">
-        </div>
-        <div class="image-container">
-            <img src="img/kulogo.png" alt="ku logo">
-        </div>
-    </div>
-
-    
-        <div class="links">
-            <a href="https://www.discord.com" target="_blank">
-                <img class="icon" src="img/discord.png" alt="Discord">
-            </a>
-            <a href="https://www.facebook.com/kucc1997/" target="_blank">
-                <img class="icon" src="img/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/kucc97/?hl=en" target="_blank">
-                <img class="icon" src="img/instagram.png" alt="Instagram">
-            </a>
-        </div>
-    
-    
-
-    
+  <body>
     <div class="contents">
-        <div class="itmeet">IT MEET</div>
-        <div class="coming">COMING SOON</div>
-       
-        </div>
-        <div class="Time">
+      <div class="logos">
+        <img src="img/kucc.png" alt="kucc logo" />
+        <img src="img/kulogo.png" alt="ku logo" />
+      </div>
+      <div class="title">
+        <img src="./img/modedark.svg" alt="it meet logo" height="120px" />
+        <h1>COMING SOON</h1>
+      </div>
+      <div class="countDown">
         <div class="time">
-            <div class="label">Day</div>
-          </div>
-          <div class="time">
-            <div class="label">Month</div>
-          </div>
-          <div class="time">
-            <div class="label">Hour</div>
-          </div>
-          <div class="time">
-            <div class="label">Minute</div>
-          </div>
-          <div class="time">
-            <div class="label">Second</div>
-          </div>
+          <h1 id="day"></h1>
+          <p>DAY</p>
         </div>
+        <div class="time">
+          <h1 id="hour"></h1>
+          <p>HOUR</p>
+        </div>
+        <div class="time">
+          <h1 id="minute"></h1>
+          <p>MINUTE</p>
+        </div>
+        <div class="time">
+          <h1 id="second"></h1>
+          <p>SECOND</p>
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://discord.gg/Anq5mTdkZu" target="_blank">
+          <img class="icon" src="img/discord.png" alt="Discord" />
+        </a>
+        <a href="https://www.facebook.com/kucc1997/" target="_blank">
+          <img class="icon" src="img/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/kucc97/?hl=en" target="_blank">
+          <img class="icon" src="img/instagram.png" alt="Instagram" />
+        </a>
+      </div>
     </div>
 
+    <script>
+      let day = document.getElementById("day");
+      let hour = document.getElementById("hour");
+      let minute = document.getElementById("minute");
+      let second = document.getElementById("second");
 
-</body>
+      const targetDate = new Date("2023-11-08T00:00:00");
 
+      function pad(d) {
+        return d < 10 ? "0" + d.toString() : d.toString();
+      }
+
+      function updateCountdown() {
+        const currentDate = new Date();
+        const timeDifference = targetDate - currentDate;
+
+        day.textContent = pad(
+          Math.floor(
+            timeDifference / (1000 * 60 * 60 * 24)
+            // / (1000 * 60 * 60 * 24)
+          )
+        );
+
+        hour.textContent = pad(
+          Math.floor(
+            (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          )
+        );
+        minute.textContent = pad(
+          Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
+        );
+        second.textContent = pad(
+          Math.floor((timeDifference % (1000 * 60)) / 1000)
+        );
+      }
+      updateCountdown();
+      // Update the countdown every second
+      setInterval(updateCountdown, 1000);
+    </script>
+  </body>
 </html>
