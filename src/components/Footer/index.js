@@ -1,10 +1,17 @@
 import React from 'react'
+import "./Footer.sass"
+import data from './data.json'
 
 export default function Footer() {
     return (
-        <>
+        <div className='footer'>
             <footer>
-                <div className="container">
+                <div className="container section"
+                    data-section="section5"
+                    style={{ width: "100 %" }}
+                    name="section5"
+                    id="section5"
+                >
                     <div className="row" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
                         <div
                             className="col-lg-6 col-md-12 wow animate__fadeInUp"
@@ -15,18 +22,18 @@ export default function Footer() {
                                 Dhulikhel
                             </div>
                             <div className="contact-item-left">
-                                <i className="fa fa-phone"></i>&nbsp;&nbsp;9861656522 (KUCC President)
+                                <i className="fa fa-phone"></i>&nbsp;&nbsp;{data.kuccPresident} (KUCC President)
                                 <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp; 9860341062 (IT Meet Coordinator)
+                                &nbsp;&nbsp;&nbsp;&nbsp; {data.itMeetCoordinator} (IT Meet Coordinator)
                             </div>
                             <div className="contact-item-left">
                                 <i className="fa fa-envelope"></i>&nbsp;&nbsp;
-                                <a href="mailto:kucc@ku.edu.np?Subject=">kucc@ku.edu.np</a>
+                                <a href={`mailto:${data.email}?Subject=`}>{data.email}</a>
                             </div>
                             <div className="contact-item-left">
                                 <i className="fa fa-globe"></i>&nbsp;&nbsp;<a
-                                    href="https://kucc.ku.edu.np"
-                                >kucc.ku.edu.np</a
+                                    href={data.webLink}
+                                >{data.webLink}</a
                                 >
                             </div>
                         </div>
@@ -45,25 +52,25 @@ export default function Footer() {
                                 <a
                                     className="btn btn-outline-warning rounded-circle text-center ml-2 me-3 px-0"
                                     style={{ width: "45px", height: "45px" }}
-                                    href="https://twitter.com/kuitmeet"
+                                    href={data.twitterLink}
                                 ><i style={{ marginTop: "6px" }} className="fa fa-twitter"></i
                                 ></a>
                                 <a
                                     className="btn btn-outline-warning rounded-circle text-center me-3 px-0"
                                     style={{ width: "45px", height: "45px" }}
-                                    href="https://www.facebook.com/KUITMEET/"
+                                    href={data.facebookLink}
                                 ><i style={{ marginTtop: "6px" }} className="fa fa-facebook"></i
                                 ></a>
                                 <a
                                     className="btn btn-outline-warning rounded-circle text-center me-3 px-0"
                                     style={{ width: "45px", height: "45px" }}
-                                    href="https://www.linkedin.com/company/kuitmeet/"
+                                    href={data.linkedinLink}
                                 ><i style={{ marginTop: "6px" }} className="fa fa-linkedin"></i
                                 ></a>
                                 <a
                                     className="btn btn-outline-warning rounded-circle text-center me-3 px-0"
                                     style={{ width: "45px", height: "45px" }}
-                                    href="https://www.instagram.com/kuitmeet/"
+                                    href={data.instagramLink}
                                 ><i style={{ marginTop: "6px" }} className="fa fa-instagram"></i
                                 ></a>
                             </div>
@@ -76,8 +83,8 @@ export default function Footer() {
                             style={{ borderTop: "1px solid white" }}
                         >
                             <p>
-                                Copyright <i className="fa fa-copyright"></i> 2022
-                                <a href="https://kucc.ku.edu.np"
+                                Copyright <i className="fa fa-copyright"></i> {data.year}
+                                <a href={data.webLink}
                                 >Kathmandu University Computer Club.</a
                                 >
                                 All Rights Reserved.
@@ -86,6 +93,6 @@ export default function Footer() {
                     </div>
                 </div>
             </footer>
-        </>
+        </div>
     )
 }

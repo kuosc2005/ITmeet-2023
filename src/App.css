@@ -3,3 +3,12 @@ body{
   padding: 0;
   /* background-color: black; */
 }
+
+:root{
+  --primary-color: #2FB3FE;
+  --secondary-color:#0FE9A7;
+  --fourth-color:#191C20;
+  --secondary-black:#6A7481 ;
+  --color-white:#FFF;
+  --tertianary-blue:#6675FF;
+}

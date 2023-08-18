@@ -1,0 +1,42 @@
+.PreEvents
+  .cards
+    display: flex
+    flex-direction: column
+    gap: 30px
+    margin-top: 20px
+    position: relative
+    .card
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      border: 1px solid #000
+      background: var(--fourth-color)
+      color: var(--color-white)
+      padding: 20px
+      .content
+        display: flex
+        flex-direction: column
+        gap: 0px
+        width: 600px
+        margin-left: 30px
+        justify-content: space-evenly
+        .icons
+          display: flex
+          flex-direction: row
+          gap: 10px
+      & img
+        width: 280px
+        height: 262.997px
+    @media screen and (max-width: 914px)
+      .card
+        flex-direction: column
+    .overlay
+      z-index: 1
+      position: absolute
+      bottom: -60px
+      height: 200px
+      width: 100%
+      background-image: linear-gradient(color-mix(in srgb, var(--color-white), transparent 100%),white)
+  .viewallbtn
+    position: relative
+    z-index: 10

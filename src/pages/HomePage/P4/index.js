@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { databaseContext } from '../../../context/databaseContext/databse.context'
+import data from './data.json'
+import { Query } from 'appwrite'
 
 export default function P4() {
+    const database = useContext(databaseContext)
+    const [sponsor, setSponsor] = useState([])
+
+    useEffect(() => {
+
+        const fetchData = async (type) => {
+            return await database.listDocuments("itmeet", "64dcd0522f029f78cb08", [
+                Query.equal("tire", ["type"])
+            ])
+        }
+        fetchData().then((value) => {
+            console.log(value.documents);
+            setSponsor(value.documents)
+        }).catch(err => {
+            alert(err)
+        })
+
+    }, [])
     return (
-        <>
+        <div className='P4'>
             <section
                 className="section sponsors"
                 data-section="section4"
@@ -14,12 +35,12 @@ export default function P4() {
                     <h3>Interested in Sponsoring?</h3>
                     <p>Email us at</p>
                     <i style={{ color: "white" }} className="fa fa-envelope"></i>&nbsp;&nbsp;
-                    <a href="mailto:kucc@ku.edu.np?Subject=">kucc@ku.edu.np</a>
+                    <a href="mailto:kucc@ku.edu.np?Subject=">{data.email}</a>
                 </div>
                 <div className="row align-items-center">
                     <div className="col-12">
                         <h5
-                            className="text-center text-uppercase text-white text-underline sponsor-title wow animate__fadeInUp"
+                            className="text-center text-uppercase text-underline sponsor-title wow animate__fadeInUp"
                             data-wow-duration="1s"
                         >
                             Gold Sponsors
@@ -28,38 +49,14 @@ export default function P4() {
                             className="our-sponsor-area d-flex justify-content-center flex-wrap wow animate__fadeInUp"
                             data-wow-duration="1s"
                         >
-                            <div className="single-sponsor mb-50">
+                            {<div className="single-sponsor mb-50">
                                 <a href="http://nta.gov.np"
                                 ><img
                                         className="img-fluid"
                                         src="assets/images/sponsers/nta.png"
                                         alt="NTA"
                                     /></a>
-                            </div>
-                            <div className="single-sponsor mb-50">
-                                <a href="http://yomari.com.np"
-                                ><img
-                                        className="img-fluid"
-                                        src="assets/images/sponsers/yomari.png"
-                                        alt="Yomari"
-                                    /></a>
-                            </div>
-                            <div className="single-sponsor mb-50">
-                                <a href="https://www.lftechnology.com/"
-                                ><img
-                                        className="img-fluid"
-                                        src="assets/images/sponsers/leapfrog.png"
-                                        alt="Leapfrog"
-                                    /></a>
-                            </div>
-                            <div className="single-sponsor mb-50">
-                                <a href="http://fusemachines.com"
-                                ><img
-                                        className="img-fluid"
-                                        src="assets/images/sponsers/fuseai.png"
-                                        alt="FuseMachines Nepal"
-                                    /></a>
-                            </div>
+                            </div>}
                         </div>
                     </div>
                 </div>
@@ -192,6 +189,6 @@ export default function P4() {
                 </div>
             </section>
 
-        </>
+        </div>
     )
 }

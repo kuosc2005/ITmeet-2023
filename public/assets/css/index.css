@@ -14,12 +14,12 @@ body {
 }
 
 a {
-	color: #3CF;
+	color: var(--primary-color);
     text-decoration: none;
 }
 
 a:hover {
-	color: #FC3;
+	color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6{
 /* Track */
 ::-webkit-scrollbar-track {
   /* box-shadow: inset 0 0 5px grey;  */
-  background-color: #4D5275;
+  background-color: var(--color-white);
   border-radius: 10px;
 }
  
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6{
     position: relative;
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     letter-spacing: 0.5px;
     display: inline-block;
     padding: 15px 20px;
@@ -97,8 +97,8 @@ h1, h2, h3, h4, h5, h6{
 /* Buttons */
 
 .main-button a {
-    background-color: #f5a425;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -114,13 +114,13 @@ a.menu-link { display: none; }
   padding: 7px;
   border:1px solid rgba(0, 0, 0, 0.9);
   background: #000839;
-  color: white; 
+  color: var(--color-white); 
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
 }
 
 .register-btn:hover{
-  background-color: white;
+  background-color: var(--color-white);
   color:  #000839;
 }
 
@@ -129,7 +129,7 @@ a.menu-link { display: none; }
     float: right;
     display: block;
     font-size: 36px;
-    color: #fff;
+    color: var(--text-color);
     padding-right: 30px;
     padding-top: 15px;
   }
@@ -164,7 +164,7 @@ a.menu-link { display: none; }
     padding: 15px 0px;
     border-bottom: 1px solid rgba(250,250,250,0.25);
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 700;
@@ -172,7 +172,7 @@ a.menu-link { display: none; }
   }
   nav[role="navigation"] li:hover a,
   nav[role="navigation"] li.active a {
-      color: #f5a425;
+      color: var(--secondary-color);
   }
   
   @media screen and (min-width: 951px) {
@@ -208,8 +208,6 @@ a.menu-link { display: none; }
 
 
 .main-header {
-    /* background-color: rgba(0,0,57,0); */
-    /* background: visible; */
     height: 80px;
     position: fixed;
     padding: 0px 150px;
@@ -236,11 +234,11 @@ a.menu-link { display: none; }
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-color);
 }
 .main-header .logo a em {
     font-style: normal;
-    color: #f5a425;
+    color: var(--secondary-color);
 }
 
 .main-menu {
@@ -265,7 +263,7 @@ a.menu-link { display: none; }
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     border: 2px solid transparent;
     transition: all 0.5s;
 }
@@ -322,13 +320,13 @@ a.menu-link { display: none; }
 }
 
 .main-menu li .sub-menu li a:hover {
-    color: #f5a425;
+    color: var(--secondary-color);
     border: none;
 }
 
 .main-nav li:hover a,
 .main-nav li.active a {
-    border: 2px solid #f5a425;
+    border: 2px solid var(--secondary-color);
 }
 
 @media (max-width: 950px) {
@@ -364,12 +362,14 @@ a.menu-link { display: none; }
 
 .video-overlay {
     position: absolute;
-    background-color: rgba(22,34,57,0.85);
+    background-color: color-mix(in srgb, var(--fourth-color), transparent 20%);
     top: 0;
     left: 0;
     bottom: 0;
     width: 100%;
 }
+
+
 
 .main-banner .caption {
   text-align: center;
@@ -385,7 +385,7 @@ a.menu-link { display: none; }
   font-size: 32px;
   font-weight: 700;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: #fff;
+  color: var(--text-color);
   letter-spacing: 1px;
 }
 
@@ -396,13 +396,13 @@ a.menu-link { display: none; }
   text-transform: uppercase;
   font-weight: 900;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  color: #fff;
+  color: var(--text-color);
   letter-spacing: 1px;
 }
 
 .main-banner .caption h2 em {
   font-style: normal;
-  color: #f5a425;
+  color: var(--secondary-color);
   font-weight: 900;
 }
 
@@ -458,13 +458,13 @@ section.features .col-4 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #0c1228;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   padding: 40px;
 }
 
 .features-content:hover {
-    background-color: #0c1228;
+    background-color: var(--primary-color);
     box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
 }
 
@@ -472,7 +472,7 @@ section.features .col-4 {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     letter-spacing: 1px;
     margin-bottom: 0px;
 }
@@ -490,11 +490,11 @@ section.features .col-4 {
   margin-top: 15px;
   display: inline-block;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text-color);
   letter-spacing: 0.5px;
   font-weight: 700;
   font-size: 14px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--text-color);
 }
 
 .features-content p.hidden-sm {
@@ -512,7 +512,7 @@ section.features .col-4 {
 }
 
 .content-hide p {
-  color: #fff;
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -544,7 +544,7 @@ section.features .col-4 {
 /* Coming Soon */
 
 section.about-section {
-    background-color: #4D5275;
+    background-color: var(--color-white);
     padding: 90px 0px;
 }
 
@@ -557,7 +557,7 @@ section.about-section .counter div {
 
 section.about-section .continer h4 {
   font-size: 20px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 40px;
@@ -570,7 +570,7 @@ section.about-section .continer h4 {
 
 section.about-section .continer h3 {
   font-size: 30px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 30px;
@@ -579,7 +579,7 @@ section.about-section .continer h3 {
 
 section.about-section .continer p {
   font-size: 18px;
-  color: rgba(255, 255, 255, 1);
+  color: var(--text-color);
   letter-spacing: 0.5px;
   line-height: 30px;
   margin-bottom: 30px;
@@ -592,7 +592,7 @@ section.about-section .continer .info-div {
 
 section.about-section .continer h4 em {
   font-style: normal;
-  color: #f5a425;
+  color: var(--secondary-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -626,7 +626,7 @@ section.about-section .continer h4 em {
 
 section.about-section .counter p{
   font-size: 20px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
@@ -644,7 +644,7 @@ section.about-section .counter .seconds {
   font-size: 48px;
   font-weight: 800;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--text-color);
   background-color: rgba(250,250,250,0.1);
 }
 @media screen and (max-width: 992px) {
@@ -696,7 +696,7 @@ section.about-section .right-content {
     margin-left: 30px;
 }
 section.about-section .right-content img {
-  background-color: #fff;
+  background-color: var(--text-color);
   padding: 20px;
   border-radius: 20px;
   width: 100%;
@@ -728,7 +728,7 @@ section.mainevents {
 }
 
 section.mainevents .item {
-  background-color: #fff;
+  background-color: var(--text-color);
   border-radius: 10px;
   padding: 30px 25px;
   margin-bottom: 30px;
@@ -752,13 +752,13 @@ section.mainevents .roww .viewallbtn{
   padding: 10px;
   border: 2px solid rgba(250,250,250,0.1);
   border-radius: 10px;
-  color: #fff;
+  color: var(--text-color);
   width: fit-content;
   transition: all 0.3s ease;
 }
 
 section.mainevents .roww .viewallbtn:hover{
-  background-color: #fff;
+  background-color: var(--text-color);
   color: #000;
 
 }
@@ -804,7 +804,7 @@ section.mainevents .item .down-content p {
 
 section.mainevents .item .down-content img {
     width: 40px;
-    border: 2px solid #f5a425;
+    border: 2px solid var(--secondary-color);
     border-radius: 50%;
     text-align: left;
     display: inline-block;
@@ -844,25 +844,25 @@ section.mainevents .owl-carousel .owl-dots {
 section.mainevents .owl-carousel button.owl-dot {
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: var(--text-color);
     margin: 50px 10px 0px 10px;
     outline: none;
 }
 section.mainevents .owl-carousel button.active {
-    background-color: #f5a425;
+    background-color: var(--secondary-color);
 }
 
 
 
 /* section sponsors */
 section.sponsors {
-  background-color: #4D5275;
+  background-color: var(--color-white);
   padding: 90px 300px;
 }
 
 section.sponsors h4 {
   font-size: 26px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 40px;
@@ -872,10 +872,10 @@ section.sponsors h4 {
 }
 
 section.sponsors .sponsor-us h3{
-  color: #fff;
+  color: var(--text-color);
 }
 section.sponsors .sponsor-us p{
-  color: #fff;
+  color: var(--text-color);
   font-size: 18px;
   margin-top: 25px;
 }
@@ -886,7 +886,7 @@ section.sponsors .sponsor-us{
 }
 
 .our-sponsor-area .single-sponsor {
-  background-color: #fff;
+  background-color: var(--text-color);
   border-radius: .2em;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 19%;
@@ -1063,7 +1063,7 @@ section.contact form input {
     border-radius: 7px;
     border: none;
     outline: none;
-    color: #fff;
+    color: var(--text-color);
     font-size: 13px;
     margin-bottom: 30px;
     letter-spacing: 0.5px;
@@ -1078,7 +1078,7 @@ section.contact form textarea {
     border-radius: 7px;
     border: none;
     outline: none;
-    color: #fff;
+    color: var(--text-color);
     font-size: 13px;
     margin-bottom: 30px;
     letter-spacing: 0.5px;
@@ -1089,21 +1089,21 @@ section.contact form textarea:focus {
     outline: none;
     border: none;
     box-shadow: none;
-    color: #fff;
+    color: var(--text-color);
     background-color: rgba(250,250,250,0.1);
 }
 
-section.contact form::placeholder { color: #fff }
-section.contact form input::placeholder { color: #fff; }
-section.contact form input::placeholder { color: #fff; }
+section.contact form::placeholder { color: var(--text-color) }
+section.contact form input::placeholder { color: var(--text-color); }
+section.contact form input::placeholder { color: var(--text-color); }
 
-section.contact form::placeholder { color: #fff }
-section.contact form textarea::placeholder { color: #fff; }
-section.contact form textarea::placeholder { color: #fff; }
+section.contact form::placeholder { color: var(--text-color) }
+section.contact form textarea::placeholder { color: var(--text-color); }
+section.contact form textarea::placeholder { color: var(--text-color); }
 
 section.contact form button {
-    background-color: #f5a425;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1125,7 +1125,7 @@ footer {
 footer p {
     margin-bottom: 0px;
     padding: 25px 0px;
-    color: #fff;
+    color: var(--text-color);
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 600;
@@ -1134,11 +1134,11 @@ footer p {
 
 footer p a,
 footer p a:hover {
-    color: #f5a425;
+    color: var(--secondary-color);
 }
 
 @media screen and (max-width: 992px) {
-  .features { background-color: #0c1228; }
+  .features { background-color: var(--primary-color); }
   .features-content { position: relative; }
   .features-post { border-left: 0 }
 }
@@ -1188,7 +1188,7 @@ footer p a:hover {
 
 
 .contact-item-left{
-  color: white;
+  color: var(--color-white);
   font-size: 18px;
   text-align: left;
   padding: 10px 10px;
@@ -1197,7 +1197,7 @@ footer p a:hover {
 }
 
 .contact-item-right{
-  color: white;
+  color: var(--color-white);
   font-size: 18px;
   text-align: left;
   padding: 10px 10px;
@@ -1206,7 +1206,7 @@ footer p a:hover {
 }
 
 .head{
-  color: #f5a425;
+  color: var(--secondary-color);
 }
 
 .form{
@@ -1223,7 +1223,7 @@ footer p a:hover {
 }
 
 .form .send-btn:hover{
-  background-color: white;
+  background-color: var(--color-white);
   color: black;
 }
 
@@ -1245,7 +1245,7 @@ footer p a:hover {
 }
 
 .faq-section .card:hover button {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .faq-section .card-header button {
@@ -1299,7 +1299,7 @@ footer p a:hover {
   font-size: 22px;
   right: 40px;
   bottom: 40px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   background-color: #df42b1;
   box-shadow: 0 2px 40px 8px rgb(15 15 15 / 15%);
@@ -1315,7 +1315,7 @@ footer p a:hover {
 .thanks{
   background-color: #4F8A10;
   font-size: 16px;
-  color: #fff;
+  color: var(--text-color);
   padding: 10px;
   margin-top: 2px;
   border-radius: 5px;
