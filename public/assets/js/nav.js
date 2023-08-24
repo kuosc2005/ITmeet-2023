@@ -1,48 +1,40 @@
-(function ($) {
+
+
+function menuScrollEffect () {
+
 	if (window.location.pathname != "/") {
-		$(function () {
-			$(".main-nav li:first").addClass("active");
-			$('.main-header').css('background-color', 'color-mix(in srgb, var(--fourth-color), transparent 0%)')
-			$('.main-header').css('margin-top', '0px')
-			$('#scrollUp').css('display', 'none');
-		});
+
+		document.querySelectorAll('#menu > ul > li:nth-child(1)')[0].classList.add("active");
+		document.getElementsByClassName("main-header")[0].style.backgroundColor = 'color-mix(in srgb, var(--fourth-color), transparent 0%)';
+		document.getElementByClassName("main-header")[0].style.marginTop = '0px';
+		document.getElementById("scrollUp").style.display = 'none';
+
 	}
 	else {
-
-		$(function () {
-			$(".main-nav li:first").addClass("active");
-			$('.main-header').css('margin-top', '30px');
-			$('#scrollUp').css('display', 'none');
-		});
-
-		$(window).scroll(function () {
-			var scroll = $(window).scrollTop();
+		document.querySelectorAll('#menu > ul > li:nth-child(1)')[0].classList.add("active");
+		document.getElementsByClassName("main-header")[0].style.marginTop = '30px';
+		document.getElementById("scrollUp").style.display = 'none';
+		window.onscroll =  (scroll) => {
+			var scroll = window.scrollY;
 			if (scroll < 200) {
-				$('.main-header').css('background-color', 'color-mix(in srgb, var(--fourth-color), transparent 100%)')
-				$('.main-header').css('margin-top', '30px')
+				document.getElementsByClassName("main-header")[0].style.backgroundColor = 'color-mix(in srgb, var(--fourth-color), transparent 100%)';
+				document.getElementsByClassName("main-header")[0].style.marginTop = '30px';
 			} else {
-				$('.main-header').css('background-color', 'color-mix(in srgb, var(--fourth-color), transparent 0%)')
-				$('.main-header').css('margin-top', '0px')
+				document.getElementsByClassName("main-header")[0].style.backgroundColor = 'color-mix(in srgb, var(--fourth-color), transparent 0%)';
+				document.getElementsByClassName("main-header")[0].style.marginTop = '0px';
 			}
-
-
+		
+		
 			if (scroll < 500) {
-				$('#scrollUp').css('display', 'none');
+				document.getElementById("scrollUp").style.display = 'none';
 			} else {
-				$('#scrollUp').css('display', 'block');
+				document.getElementById("scrollUp").style.display = 'block';
 			}
-		});
+		};
+
+		
 	}
+}
 
-
-	// $(".main-menu, .scroll-to-section").on("click", "a", function (e) {
-	//     if ($(e.target).hasClass("external")) {
-	//       return;
-	//     }
-	//     e.preventDefault();
-	//     $("#menu").removeClass("active");
-	//     showSection($(this).attr("href"), true);
-	//   });
-
-})(jQuery);
+window.onload = menuScrollEffect;
 
