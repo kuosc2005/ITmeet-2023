@@ -9,6 +9,8 @@ import IndividualEvent from './pages/IndividualEvent';
 import AllPreEvents from './pages/AllPreEvent';
 
 function App() {
+
+
   return (
     <DatabaseState>
       <div className="App">
