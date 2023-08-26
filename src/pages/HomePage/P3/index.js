@@ -3,7 +3,7 @@ import './P3.sass'
 import { databaseContext } from '../../../context/databaseContext/databse.context'
 import { Query } from 'appwrite'
 import Slider from '../../../components/Slider'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function P3() {
     const navigate = useNavigate()
@@ -48,7 +48,6 @@ export default function P3() {
                     <Slider >
                         {
                             event.map(element => {
-
                                 return (
                                     <div class="item">
                                         <img src={element.photo} alt="Event #2" />
@@ -59,7 +58,7 @@ export default function P3() {
                                             </p>
                                             <div class="more-btn">
                                                 <div onClick={() => {
-                                                    navigate(`/event/${element.title}`)
+                                                    navigate(`/event/${element.$id}`)
                                                 }}>
                                                     More <i class="fa fa-angle-double-right"></i>
                                                 </div>

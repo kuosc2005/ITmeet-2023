@@ -2,10 +2,9 @@ import React, { useState, useEffect, useContext } from 'react'
 import { databaseContext } from '../../context/databaseContext/databse.context'
 import { Query } from 'appwrite'
 import './AllEvents.sass'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function AllEvents() {
-
     const database = useContext(databaseContext)
     const navigate = useNavigate()
     const [event, setEvents] = useState([])
@@ -23,32 +22,30 @@ export default function AllEvents() {
     }, [])
     return (
         <div className='AllEvents'>
-            <section className="all-events-section" style={{ width: "100%" }}>
-                <div className="container">
-                    <div>
-                        <div className="row hidden-md-up">
-                            <div className="col-lg-3 col-md-6">
-                                {event.map(element => (
-                                    <div className="card" onClick={() => {
-                                        navigate(`/event/${element.title}`)
-                                    }}>
-                                        <div className="card-block">
-                                            <img src={element.photo} alt={element.title} />
-                                            <h4 className="card-title">{element.title}</h4>
-                                            <p className="card-text ">
-                                                {element.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))
-                                }
-                            </div>
-                        </div>
+            {event.map(element => (
+                <div className="card" onClick={() => {
+                    navigate(`/event/${element.$id}`)
+                }}>
+                    <div className="card-block">
+                        <img src={element.photo} alt={element.title} />
+                        <h4 className="card-title">{element.title}</h4>
+                        {
+                            element.description.length < 150 ?
+                                <p className="card-text ">
+                                    {element.description}
+                                </p> :
+                                <p className="card-text ">
+                                    {element.description.slice(0, 150) + "  "}
+                                    <Link to={`/events/${element.$id}`} >
+                                        More ..
+                                    </Link>
+                                </p>
+                        }
                     </div>
                 </div>
-            </section>
+            ))
+            }
         </div>
-
 
     )
 }
