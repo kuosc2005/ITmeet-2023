@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { databaseContext } from "../../../context/databaseContext/databse.context";
-import { FiClock, FiTarget } from "react-icons/fi";
+import { FiClock } from "react-icons/fi";
 import { BiSolidEditLocation } from "react-icons/bi";
 import { Query } from "appwrite";
 import "./PreEvents.sass";
@@ -44,7 +44,7 @@ export default function PreEvents() {
                 <div
                   className="card"
                   onClick={() => {
-                    navigate(`/event/${element.title}`);
+                    navigate(`/event/${element.$id}`);
                   }}
                 >
                   <div className="content">
@@ -53,7 +53,7 @@ export default function PreEvents() {
                       <>
                         <p>
                           {element.description.slice(0, 150)}
-                          <Link to={`/event/${element.title}`}>More ...</Link>
+                          <Link to={`/event/${element.$id}`}>More ...</Link>
                         </p>
                       </>
                     ) : (

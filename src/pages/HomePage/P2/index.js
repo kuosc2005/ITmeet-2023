@@ -73,13 +73,6 @@ export default function P2() {
                                 <span>Seconds</span>
                             </div>
                         </div>
-                        <p
-                            style={{ marginLeft: "3px", marginTop: "10px" }}
-                            className="wow animate__fadeInUp"
-                            data-wow-duration="1s"
-                        >
-                            to go . . .
-                        </p>
                     </div>
                 </div>
             </section >

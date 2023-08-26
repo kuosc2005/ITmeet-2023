@@ -23,6 +23,7 @@ function App() {
           <Route path="/event/:title" element={<IndividualEvent />} />
         </Routes>
         <Footer />
+
       </div>
     </DatabaseState>
 

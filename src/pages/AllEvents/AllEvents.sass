@@ -1,8 +1,17 @@
 .AllEvents
+    display: flex
+    flex-wrap: wrap
     margin: 100px 0
+    gap: 30px
+    align-items: center
+    justify-content: center
     .card
         padding: 32px
         height: 400px
         width: 300px
-        & img
-            width: 100%
+        .card-block
+            display: flex
+            flex-direction: column
+            gap: 10px
+            & img
+                width: 100%

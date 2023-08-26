@@ -34,14 +34,14 @@ export default function AllPreEvents() {
                             <div className="cards">
                                 {event.map(element => (
                                     <div className="card" onClick={() => {
-                                        navigate(`/event/${element.title}`)
+                                        navigate(`/event/${element.$id}`)
                                     }}>
                                         <div className="content">
                                             <h2>{element.title}</h2>
                                             {element.description.length > 150 ? <>
                                                 <p>
                                                     {element.description.slice(0, 150)}
-                                                    <Link to={`/event/${element.title}`}>More ...</Link>
+                                                    <Link to={`/event/${element.$id}`}>More ...</Link>
                                                 </p>
 
                                             </> : <p> {element.description}</p>}

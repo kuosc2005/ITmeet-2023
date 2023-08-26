@@ -1,14 +1,18 @@
-body{
+body {
   margin: 0;
   padding: 0;
   /* background-color: black; */
 }
 
-:root{
-  --primary-color: #2FB3FE;
-  --secondary-color:#0FE9A7;
-  --fourth-color:#191C20;
-  --secondary-black:#6A7481 ;
-  --color-white:#FFF;
-  --tertianary-blue:#6675FF;
+:root {
+  --primary-color: #2fb3fe;
+  --secondary-color: #0fe9a7;
+  --fourth-color: #191c20;
+  --secondary-black: #6a7481;
+  --color-white: #fff;
+  --tertianary-blue: #6675ff;
+}
+
+.scrollUp {
+  background-color: var(--secondary-color) !important;
 }

@@ -14,7 +14,7 @@ export default function IndividualEvent() {
   useEffect(() => {
     const fetchData = async () => {
       return await database.listDocuments("itmeet", "events", [
-        Query.equal("title", [param.title]),
+        Query.equal("$id", [param.title]),
       ]);
     };
     fetchData()
@@ -115,6 +115,7 @@ export default function IndividualEvent() {
               <img
                 className="img-fluid"
                 src={event[0] ? event[0].photo : null}
+                alt={event[0].title}
               />
             </div>
           </div>
