@@ -19,7 +19,6 @@ export default function IndividualEvent() {
     };
     fetchData()
       .then((value) => {
-        console.log(value.documents);
         setEvents(value.documents);
       })
       .catch((err) => {
@@ -50,8 +49,8 @@ export default function IndividualEvent() {
                 <strong>Date: </strong>
                 {event[0]
                   ? moment(event[0].date_time)
-                      .utcOffset("+0545")
-                      .format("YYYY/MM/DD kk:mm:ss")
+                    .utcOffset("+0545")
+                    .format("YYYY/MM/DD kk:mm:ss")
                   : null}
               </h5>
 
@@ -61,17 +60,17 @@ export default function IndividualEvent() {
               {event[0]
                 ? event[0].em_name
                   ? event[0].em_name.map((value, index) => (
-                      <>
-                        <h5>
-                          <strong>Name:</strong>
-                          {value}
-                        </h5>
-                        <h5>
-                          <strong>Contact Number:</strong>
-                          {event[0].em_phone[index]}{" "}
-                        </h5>
-                      </>
-                    ))
+                    <>
+                      <h5>
+                        <strong>Name:</strong>
+                        {value}
+                      </h5>
+                      <h5>
+                        <strong>Contact Number:</strong>
+                        {event[0].em_phone[index]}{" "}
+                      </h5>
+                    </>
+                  ))
                   : null
                 : null}
 

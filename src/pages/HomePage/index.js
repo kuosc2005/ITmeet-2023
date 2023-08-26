@@ -7,6 +7,7 @@ import P5 from './P5'
 import PreEvents from './PreEvents'
 
 export default function HomePage() {
+
     return (
         <div>
             <P1 />

@@ -15,7 +15,6 @@ export default function P5() {
     };
     fetchData()
       .then((value) => {
-        console.log(value.documents);
         setQna(value.documents);
       })
       .catch((err) => {

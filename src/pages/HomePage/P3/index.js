@@ -17,7 +17,6 @@ export default function P3() {
             ])
         }
         fetchData().then((value) => {
-            console.log(value.documents);
             setEvents(value.documents)
         }).catch(err => {
             alert(err)
@@ -49,7 +48,7 @@ export default function P3() {
                     <Slider >
                         {
                             event.map(element => {
-                                console.log(element);
+
                                 return (
                                     <div class="item">
                                         <img src={element.photo} alt="Event #2" />
