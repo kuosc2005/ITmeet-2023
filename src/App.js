@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import AllEvents from './pages/AllEvents';
 import IndividualEvent from './pages/IndividualEvent';
 import AllPreEvents from './pages/AllPreEvent';
+import React, { useEffect } from 'react';
 
 function App() {
 

@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 export default function AllPreEvents() {
+
     const database = useContext(databaseContext)
     const navigate = useNavigate()
     const [event, setEvents] = useState([])

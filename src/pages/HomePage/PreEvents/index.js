@@ -20,7 +20,6 @@ export default function PreEvents() {
     };
     fetchData()
       .then((value) => {
-        console.log(value.documents);
         setPreEvents(value.documents);
       })
       .catch((err) => {

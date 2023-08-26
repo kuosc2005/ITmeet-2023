@@ -8,20 +8,19 @@ export default function P4() {
     const [sponsor, setSponsor] = useState([])
 
     useEffect(() => {
-
         const fetchData = async (type) => {
-            return await database.listDocuments("itmeet", "64dcd0522f029f78cb08", [
-                Query.equal("tire", ["type"])
-            ])
+            return await database.listDocuments("itmeet", "64dcd0522f029f78cb08")
         }
         fetchData().then((value) => {
-            console.log(value.documents);
+            console.log(value.documents)
+
             setSponsor(value.documents)
         }).catch(err => {
             alert(err)
         })
 
     }, [])
+    console.log(sponsor[0]);
     return (
         <div className='P4'>
             <section
@@ -37,29 +36,42 @@ export default function P4() {
                     <i style={{ color: "white" }} className="fa fa-envelope"></i>&nbsp;&nbsp;
                     <a href="mailto:kucc@ku.edu.np?Subject=">{data.email}</a>
                 </div>
-                <div className="row align-items-center">
+
+                {/* {sponsor.some(value => value.tire === "gold") ? <div className="row align-items-center">
+
                     <div className="col-12">
                         <h5
                             className="text-center text-uppercase text-underline sponsor-title wow animate__fadeInUp"
                             data-wow-duration="1s"
                         >
-                            Gold Sponsors
+                            Gold Sponsor
                         </h5>
                         <div
                             className="our-sponsor-area d-flex justify-content-center flex-wrap wow animate__fadeInUp"
                             data-wow-duration="1s"
                         >
-                            {<div className="single-sponsor mb-50">
-                                <a href="http://nta.gov.np"
-                                ><img
-                                        className="img-fluid"
-                                        src="assets/images/sponsers/nta.png"
-                                        alt="NTA"
-                                    /></a>
-                            </div>}
+                            {
+                                console.log(
+                                    "gold" +
+                                    sponsor.some(value => value.tire == "gold"))
+                                // .map(element => (
+                                //     <div className="single-sponsor mb-50">
+                                //         <a href={element.link}
+                                //         ><img
+                                //                 className="img-fluid"
+                                //                 src="assets/images/sponsers/nta.png"
+                                //                 alt="NTA"
+                                //             /></a>
+                                //     </div>
+                                // ))
+                            }
+
+
+
                         </div>
                     </div>
-                </div>
+                </div> : null
+                }
 
                 <div className="row align-items-center">
                     <div className="col-12">
@@ -186,9 +198,9 @@ export default function P4() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </div> */}
+            </section >
 
-        </div>
+        </div >
     )
 }
