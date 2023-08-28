@@ -4,6 +4,7 @@ import logo from '../../assets/images/logo.png'
 
 export default function NavigationBar() {
     const [location, setLocation] = useState(false)
+    const [active, setActive] = useState(false)
 
     useEffect(() => {
         if (window.location.pathname !== "/") {
@@ -52,9 +53,14 @@ export default function NavigationBar() {
                         <img className="logo-image" src={logo} />
                     </a>
                 </div>
-                <a href="#menu" className="menu-link"><i className="fa fa-bars"></i></a>
-                <nav id="menu" className="main-nav" role="navigation">
-                    <ul className="main-menu">
+                <div className="menu-link" onClick={() => {
+                    console.log(
+                        "something"
+                    );
+                    setActive(!active)
+                }}><i className="fa fa-bars" ></i></div>
+                <nav id="menu" className={`main-nav ${active ? "active" : ""}`} role="navigation">
+                    <ul className={`main-menu `}>
                         <li><a href="/#section1">Home</a></li>
                         <li><a href="/#section2">About</a></li>
                         <li><a href="/allEvents">Events</a></li>

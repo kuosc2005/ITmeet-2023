@@ -109,7 +109,7 @@ h6 {
   outline: none;
 }
 
-a.menu-link {
+.menu-link {
   display: none;
 }
 
@@ -128,7 +128,7 @@ a.menu-link {
 }
 
 @media screen and (max-width: 950px) {
-  a.menu-link {
+  .menu-link {
     float: right;
     display: block;
     font-size: 36px;
