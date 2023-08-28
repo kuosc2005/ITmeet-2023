@@ -47,20 +47,20 @@ export default function P3() {
                 <div className='carousel'>
                     <Slider >
                         {
-                            event.map(element => {
+                            event.map((element, index) => {
                                 return (
-                                    <div class="item">
+                                    <div className="item" key={index}>
                                         <img src={element.photo} alt="Event #2" />
-                                        <div class="down-content">
+                                        <div className="down-content">
                                             <h4>{element.title}</h4>
                                             <p>
                                                 {element.description}
                                             </p>
-                                            <div class="more-btn">
+                                            <div className="more-btn">
                                                 <div onClick={() => {
                                                     navigate(`/event/${element.$id}`)
                                                 }}>
-                                                    More <i class="fa fa-angle-double-right"></i>
+                                                    More <i className="fa fa-angle-double-right"></i>
                                                 </div>
                                             </div>
                                         </div>

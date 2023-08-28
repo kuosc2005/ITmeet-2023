@@ -95,7 +95,7 @@ export default function Footer() {
             </footer>
             <a href="#">
                 <div id="scrollUp">
-                    <i class="fa fa-angle-double-up"></i>
+                    <i className="fa fa-angle-double-up"></i>
                 </div>
             </a>
         </div>

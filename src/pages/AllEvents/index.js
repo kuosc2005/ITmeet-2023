@@ -22,8 +22,8 @@ export default function AllEvents() {
     }, [])
     return (
         <div className='AllEvents'>
-            {event.map(element => (
-                <div className="card" onClick={() => {
+            {event.map((element, index) => (
+                <div className="card" key={index} onClick={() => {
                     navigate(`/event/${element.$id}`)
                 }}>
                     <div className="card-block">

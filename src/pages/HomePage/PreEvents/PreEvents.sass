@@ -13,11 +13,10 @@
       background: var(--fourth-color)
       color: var(--color-white)
       padding: 20px
+      gap: 10px
       .content
         display: flex
         flex-direction: column
-        gap: 0px
-        width: 600px
         margin-left: 30px
         justify-content: space-evenly
         .icons
@@ -30,6 +29,8 @@
     @media screen and (max-width: 914px)
       .card
         flex-direction: column
+        align-items: center
+        justify-content: center
     .overlay
       z-index: 1
       position: absolute

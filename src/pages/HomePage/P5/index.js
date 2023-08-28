@@ -3,11 +3,21 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./P5.sass";
 import { databaseContext } from "../../../context/databaseContext/databse.context";
+import L from 'leaflet';
+import marker from '../../../assets/images/marker.svg'
 
 export default function P5() {
   const center = [27.6227443, 85.5310493];
   const database = useContext(databaseContext);
   const [qna, setQna] = useState([]);
+
+  const iconPerson = new L.Icon({
+    iconUrl: (marker),
+    iconRetinaUrl: (marker),
+    popupAnchor: [-0, -0],
+    iconSize: new L.Point(32, 32),
+    className: 'leaflet-div-icon'
+  });
 
   useEffect(() => {
     const fetchData = async (type) => {
@@ -42,7 +52,7 @@ export default function P5() {
               <div className="faq-section mb-100">
                 <div className="accordion" id="faqAccordian">
                   {qna.map((element, index) => (
-                    <div
+                    <div key={index}
                       className="accordian-item card wow animate__fadeInUp"
                       data-wow-duration="1s"
                     >
@@ -161,7 +171,7 @@ export default function P5() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={center}>
+              <Marker position={center} icon={iconPerson}>
                 <Popup>
                   Kathmandu University <br /> IT Meet Venue.
                 </Popup>

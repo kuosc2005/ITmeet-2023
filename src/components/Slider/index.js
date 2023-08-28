@@ -15,11 +15,15 @@ const Slider = (props) => {
         },
         tablet: {
             breakpoint: { max: 1350, min: 1115 },
-            items: 4
+            items: 3
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 1115, min: 580 },
             items: 2
+        },
+        smobile: {
+            breakpoint: { max: 580, min: 0 },
+            items: 1
         }
     };
     return (

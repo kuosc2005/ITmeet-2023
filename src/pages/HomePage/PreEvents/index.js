@@ -41,7 +41,7 @@ export default function PreEvents() {
           {preEvents.map((element, index) => {
             if (index < 3)
               return (
-                <div
+                <div key={index}
                   className="card"
                   onClick={() => {
                     navigate(`/event/${element.$id}`);
