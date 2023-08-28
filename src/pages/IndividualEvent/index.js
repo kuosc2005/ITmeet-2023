@@ -27,7 +27,7 @@ export default function IndividualEvent() {
   }, []);
   return (
     <div className="InidividualEvent">
-      <section
+      {event[0] ? <section
         className="event-section coming-soon-white"
         style={{ width: "100%" }}
       >
@@ -120,7 +120,7 @@ export default function IndividualEvent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> : null}
     </div>
   );
 }

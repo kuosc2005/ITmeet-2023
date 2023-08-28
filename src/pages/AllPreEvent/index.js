@@ -32,8 +32,8 @@ export default function AllPreEvents() {
                     <div>
                         <div className="row hidden-md-up">
                             <div className="cards">
-                                {event.map(element => (
-                                    <div className="card" onClick={() => {
+                                {event.map((element, key) => (
+                                    <div className="card" key={key} onClick={() => {
                                         navigate(`/event/${element.$id}`)
                                     }}>
                                         <div className="content">

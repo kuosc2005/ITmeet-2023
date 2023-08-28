@@ -12,15 +12,12 @@ export default function P4() {
             return await database.listDocuments("itmeet", "64dcd0522f029f78cb08")
         }
         fetchData().then((value) => {
-            console.log(value.documents)
-
             setSponsor(value.documents)
         }).catch(err => {
             alert(err)
         })
 
     }, [])
-    console.log(sponsor[0]);
     return (
         <div className='P4'>
             <section
