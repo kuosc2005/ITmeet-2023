@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contents {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("./img/ku.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* logo of kucc and ku along with the rectangle  */
+.logos {
+  display: flex;
+  align-self: flex-end;
+  width: min-content;
+  background: #fff;
+  border-radius: 40px;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+}
+
+.logos img {
+  height: 98px;
+}
+
+.title {
+  margin-top: -24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title p {
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title h1 {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 98px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  width: 100%;
+}
+
+.countDown {
+  display: flex;
+  flex-direction: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+/* for square boxes */
+.time {
+  margin-top: 30px;
+  height: 240px;
+  width: 220px;
+  border-radius: 30px;
+  background: white;
+  padding: 24px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+.time h1 {
+  font-family: "Bree Serif", serif;
+  font-size: 124px;
+}
+
+.time p {
+  font-family: Arial;
+}
+
+.links {
+  display: flex;
+  margin-top: 30px;
+  align-self: flex-end;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 32x;
+  height: 32px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 920px) {
+  .logos {
+    align-self: center;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .title p {
+    font-size: 24px;
+  }
+  .title h1 {
+    font-size: 64px;
+  }
+}
